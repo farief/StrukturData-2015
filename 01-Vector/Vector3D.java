@@ -1,5 +1,7 @@
 //unit tes 1
 public class Vector3D {
+    /*tes1 double x,y,z ; */
+   //tes 2
     private double x;
     private double y ;
     private double z;
