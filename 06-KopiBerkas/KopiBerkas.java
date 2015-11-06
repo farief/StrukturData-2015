@@ -8,8 +8,21 @@ import java.io.IOException;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class KopiBerkas
-{
+public class KopiBerkas{
+    
+   public static void main(String [] args){
+       try{
+           KopiBerkas x = new KopiBerkas();
+           x.kopi("Tes1.txt","TesAkhir.txt");
+        }
+        
+         catch(IOException kesalahan){
+           System.out.printf("Terjadi kesalahan: %s", kesalahan);
+        
+        
+        }
+        }
+    
    public void kopi ( String sumber, String sasaran) throws IOException {
        FileInputStream masukan= null;
        FileOutputStream keluaran= null;
