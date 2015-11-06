@@ -47,7 +47,8 @@ public class KopiBerkas{
             // Tutup stream masukan
             if (masukan != null)
                 masukan.close();
-             if(keluaran != null)
+                
+            if(keluaran != null)
                 keluaran.close();
             }
                
