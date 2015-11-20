@@ -7,7 +7,7 @@ public class AKeAt {
     public void aKeAt(String sumber, String sasaran) throws IOException{
         FileInputStream masukan = null;
         FileOutputStream keluaran = null;
-        
+         
         try{
             masukan = new FileInputStream(sumber);
             keluaran = new FileOutputStream(sasaran);
