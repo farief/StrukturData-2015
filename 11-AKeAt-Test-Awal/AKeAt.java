@@ -14,8 +14,8 @@ public class AKeAt {
             
             int karakter = masukan.read();
             while (karakter != -1){
-                if(karakter==65 || karakter==97){
-                    karakter=64;
+                if(karakter=='a' || karakter=='A'){
+                    karakter='@';
                 }
                 keluaran.write(karakter);
                 karakter = masukan.read();
