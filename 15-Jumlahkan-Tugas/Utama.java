@@ -21,5 +21,5 @@ public class Utama {
         System.out.printf("Waktu = %dms\n\n", end-start);        
     }
     
-    private final static int BANYAK_DATA = 1000000;
+    private final static int BANYAK_DATA = 100000;
 }
