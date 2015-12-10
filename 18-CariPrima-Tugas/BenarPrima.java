@@ -65,7 +65,8 @@ public class BenarPrima implements Runnable {
     public void run() {
         ///////////////////////////////////////////////////////////////////////
         // MASUKKAN KODE ANDA DI BAWAH INI
-
+        benarPrima();
+        selesai=true;
         // MASUKKAN KODE ANDA DI ATAS INI
         ///////////////////////////////////////////////////////////////////////
     }
