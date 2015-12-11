@@ -34,17 +34,17 @@ public class ProcessClientThread implements Runnable {
       private void prosesPermintaanClient() 
                  throws InterruptedException, IOException {
         String ip = koneksi.getInetAddress().getHostAddress();
-        System.out.println("Dari: " + ip);
+        System.out.println("Dari : " + ip);
         
         // Ambil dan tampilkan masukan
         InputStream masukan = koneksi.getInputStream();
         BufferedReader masukanReader = new BufferedReader(new InputStreamReader(masukan)); 
         String baris = masukanReader.readLine();
-        System.out.println(baris);
+        System.out.println("\nPesan : "+baris);
         
         // Baca pesan dari keyboard
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Pesan kembali: ");
+        System.out.print("Pesan kembali : ");
         baris = keyboard.nextLine();
         
         // Kirim ke client
@@ -57,7 +57,7 @@ public class ProcessClientThread implements Runnable {
         // Tunggu kirim balasan client
         masukanReader = new BufferedReader(new InputStreamReader(masukan)); 
         baris = masukanReader.readLine();
-        System.out.println(baris);
+        System.out.println("Output(Upper) : "+baris);
     }
 
       private Socket koneksi;

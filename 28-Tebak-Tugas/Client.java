@@ -18,9 +18,16 @@ public class Client {
         Socket socket = new Socket("localhost", 33333);
         
         try {
+            String baris=null;
+            int i=0;
+            Reader masukan=null;
+            BufferedReader masukanBuff=null;
+            
+             for(; i<3;i++){
             // Ketik
             Scanner keyboard = new Scanner(System.in);
-            System.out.print("\nPesan : ");
+            System.out.println("\n\t\tPermainan Tebak Angka");
+            System.out.print("Masukkan Angka : ");            
             String ketikanSatuBaris = keyboard.nextLine();
                     
             // Tulis ke socket
@@ -32,18 +39,20 @@ public class Client {
                 
             // Baca dari Server
             System.out.print("Dari server : ");
-            Reader masukan = new InputStreamReader(socket.getInputStream()); 
-            BufferedReader masukanBuff = new BufferedReader(masukan);
-            String baris = masukanBuff.readLine();
-            System.out.println(baris);                
+            masukan = new InputStreamReader(socket.getInputStream()); 
+            masukanBuff = new BufferedReader(masukan);
+            baris = masukanBuff.readLine();
+            System.out.println(baris);     
             
-            // Kirim kembali ke server
-            String barisUpper = baris.toUpperCase();
-            System.out.print("Ke server: ");
-            System.out.println(barisUpper);                
-            keluaranBuff.write(barisUpper);
-            keluaranBuff.write("\n");
-            keluaranBuff.flush();
+            if(baris.equalsIgnoreCase("Benar"))
+                    break;
+            }
+
+            if(i==3)
+            masukan = new InputStreamReader(socket.getInputStream()); 
+            masukanBuff = new BufferedReader(masukan);
+                baris = masukanBuff.readLine();
+                System.out.println("Kalah, angka = "+baris);                      
         }
         catch(IOException salah) {
             System.out.println(salah);
