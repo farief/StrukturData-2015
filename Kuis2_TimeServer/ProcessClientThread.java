@@ -50,6 +50,8 @@ public class ProcessClientThread implements Runnable {
         Calendar kalender = Calendar.getInstance();
         String waktustr = kalender.getTime().toString();
         
+        
+        
       //  Calendar kalender = calendar.getInstance();
         //kalender.add(Calendar.HOUR_OF_DAY,-4);
         
@@ -58,6 +60,7 @@ public class ProcessClientThread implements Runnable {
         InputStream masukan = koneksi.getInputStream();
         BufferedReader masukanReader = new BufferedReader(new InputStreamReader(masukan)); 
         String baris = masukanReader.readLine();
+        String[] hasil = baris.split(" ");
        
         System.out.println(baris);
         
@@ -83,6 +86,17 @@ public class ProcessClientThread implements Runnable {
      
       else if(baris.equals(WAKTU)){
                 Kirim=""+waktustr;
+                keluaran = koneksi.getOutputStream();
+                keluaranBuf = new BufferedWriter (new OutputStreamWriter(keluaran));
+                keluaranBuf.write(Kirim);
+                keluaranBuf.newLine();
+                keluaranBuf.flush();
+        }
+        
+        else if(hasil[0].compareTo("WAKTU")==0){
+                int perubahan = Integer.parseInt(hasil[1]);
+                kalender.add(Calendar.HOUR_OF_DAY, perubahan-7);
+                String Kirim =kalender.getTime().toString();
                 keluaran = koneksi.getOutputStream();
                 keluaranBuf = new BufferedWriter (new OutputStreamWriter(keluaran));
                 keluaranBuf.write(Kirim);
