@@ -102,7 +102,7 @@ public class ProcessClientThread implements Runnable {
       else{
                 keluaran = koneksi.getOutputStream();
                 keluaranBuf = new BufferedWriter (new OutputStreamWriter(keluaran));
-                keluaranBuf.write("Perintah Tidak Dikenal");
+                keluaranBuf.write("Perintah Tidak Dikenal !");
                 keluaranBuf.newLine();
                 keluaranBuf.flush();
             }
