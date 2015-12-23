@@ -23,7 +23,7 @@ public class Client {
         BufferedReader masukanBuff=null;
         int a=0;
         try {
-           for(;;){
+           //for(;;){
            Scanner keyboard = new Scanner(System.in);
             System.out.print("Pesan : ");
             String ketikanSatuBaris = keyboard.nextLine();
@@ -42,10 +42,10 @@ public class Client {
             String baris = masukanBuff.readLine();
             System.out.println(baris);
             if(baris.equals("SIAPA")){
-             continue;
+             //continue;
             }
             else if(baris.equals("WAKTU")){
-                continue;
+                //continue;
             }
             /*else if(baris.equals("JUMLAH")){
                 masukan = new InputStreamReader(socket.getInputStream());
@@ -54,10 +54,10 @@ public class Client {
                 System.out.println("Kalah, angka = "+baris);
                 continue;
             }*/
-           else if(baris.equals("SELESAI")){
-              break;
-            }
-        }
+           //else if(baris.equals("SELESAI")){
+             // break;
+           // }
+        //}
         
         
           

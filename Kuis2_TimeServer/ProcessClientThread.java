@@ -20,7 +20,7 @@ public class ProcessClientThread implements Runnable {
     private String WAKTU="WAKTU";
     /*private String TAMBAH="TAMBAH";
     private String KURANG="KURANG";*/
-   private String SELESAI="SELESAI";
+   //private String SELESAI="SELESAI";
     String Kirim= null;
     OutputStream keluaran =null;
     BufferedWriter keluaranBuf = null;
@@ -50,8 +50,11 @@ public class ProcessClientThread implements Runnable {
         Calendar kalender = Calendar.getInstance();
         String waktustr = kalender.getTime().toString();
         
+      //  Calendar kalender = calendar.getInstance();
+        //kalender.add(Calendar.HOUR_OF_DAY,-4);
+        
         // Ambil dan tampilkan masukan
-    for(;;){
+    //for(;;){
         InputStream masukan = koneksi.getInputStream();
         BufferedReader masukanReader = new BufferedReader(new InputStreamReader(masukan)); 
         String baris = masukanReader.readLine();
@@ -87,13 +90,13 @@ public class ProcessClientThread implements Runnable {
                 keluaranBuf.flush();
         }
       
-      else if(baris.equals(SELESAI)){
+      /*else if(baris.equals(SELESAI)){
                 keluaran = koneksi.getOutputStream();
                 keluaranBuf = new BufferedWriter (new OutputStreamWriter(keluaran));
                 keluaranBuf.write("SELESAI");
                 keluaranBuf.newLine();
                 keluaranBuf.flush();
-            } 
+            } */
             
            
       else{
@@ -106,7 +109,7 @@ public class ProcessClientThread implements Runnable {
       
             keluaranBuf.newLine();
             keluaranBuf.flush();
-      }
+    //  }
     }
     
     private void prosesPermintaanClient() {
