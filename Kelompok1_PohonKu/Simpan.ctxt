@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Simpan()
+comment1.params=id\ waktu\ suhu\ lem\ uv\ nit
+comment1.target=void\ isiData(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ showData()
+comment3.params=keadaan\ id
+comment3.target=java.lang.String\ ambilData(java.lang.String,\ java.lang.String)
+comment4.params=id\ waktu
+comment4.target=java.lang.String\ ambilWaktu(java.lang.String,\ java.lang.String)
+numComments=5
